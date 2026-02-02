@@ -1,50 +1,48 @@
-# 🎬 Movie Matcher: Interactive Recommendation Engine
+# 🎬 Movie Matcher: Hybrid Recommendation Engine
 
-### A production-ready Movie Recommender built with Python, Streamlit, and Fuzzy String Matching.
+### A high-performance web application that combines Collaborative Filtering and Content-Based logic to provide intelligent movie suggestions.
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue?style=flat&logo=python)
 ![Framework](https://img.shields.io/badge/Framework-Streamlit-FF4B4B?style=flat&logo=streamlit)
-![Matching](https://img.shields.io/badge/Search-FuzzyWuzzy-green)
-![Status](https://img.shields.io/badge/Status-Deployed-brightgreen)
+![Algorithm](https://img.shields.io/badge/Algorithm-Hybrid--Collaborative-orange)
+![Performance](https://img.shields.io/badge/Speed-Optimized-brightgreen)
 
 ## 📌 Project Overview
-Most recommendation systems fail when a user makes a typo or gets the title slightly wrong. This project solves that by combining **Item-Based Collaborative Filtering** with **Fuzzy String Matching**, wrapped in a clean, interactive **Streamlit web interface**.
-
-Users can type in a movie (even with typos like "the marix") and receive 10 highly correlated recommendations based on the behavior of over 600 real users.
+Purely "social" recommendation systems often suffer from statistical noise—recommending random movies just because one user watched both. This project implements a **Hybrid Engine** that balances user-rating correlations with genre similarity to ensure results are both mathematically sound and contextually relevant.
 
 ## 🚀 Live Demo
-**[[recommend me some movies](https://recommend-me-some-movies.streamlit.app/)]**
+**[[INSERT YOUR STREAMLIT CLOUD URL HERE](https://recommend-me-some-movies.streamlit.app/)]**
 
-## 📂 Dataset
-The project uses the **MovieLens Small Dataset** (100k ratings, 9k movies).[[1](https://www.google.com/url?sa=E&q=https%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQGtpmzcwrVYQq3-VCXtI0bsco0Z_RjTupdbinn8S6xWe8EuIDhyHs3aaEO_eeYWrUiNEMMosLsHtf7MPYEw4iaRHRRYxNBsAD4uZeONrY7u4gHhJTOM1sNEtCnTcyI26kEGbYLb2w%3D%3D)]
-*   `movies.csv`: Contains movie titles and genres.
-*   `ratings.csv`: Contains user ratings on a 1-5 scale.
+## 🛠️ Engineering Highlights
 
-## 🛠️ Key Advancements
-### 1. Robust Search (Fuzzy Matching)
-I implemented `thefuzz` library using the `token_sort_ratio` algorithm. This allows the system to:
-*   Handle **Typos** (e.g., "Incepton" -> "Inception").
-*   Ignore **Word Order** (e.g., "Matrix The" -> "The Matrix").
-*   Ignore **Case Sensitivity**.
+### 1. Hybrid Recommendation Logic
+Most beginners use only one method. This system uses two:
+*   **Collaborative Filtering:** Uses Pearson Correlation to find movies that "behave" like the input based on 100,000+ user ratings.
+*   **Content-Based Boosting:** Applies a weighted "Genre Boost" by calculating the intersection of genre sets. This ensures that searching for a superhero movie actually returns superhero movies, even if the rating data is sparse.
 
-### 2. Collaborative Filtering Engine
-The engine calculates similarity using **Pearson Correlation** between user-rating vectors. To ensure high-quality suggestions, I implemented a **Popularity Threshold**, filtering out any movies with fewer than 50 ratings to remove statistical noise.
+### 2. High-Performance Optimization
+To ensure a "lag-free" user experience on the web:
+*   **Matrix Shrinking:** I reduced the computational search space by 95% (from 9,000 to ~450 columns) by pre-filtering for high-confidence (50+ ratings) candidates.
+*   **Data Caching:** Utilized `@st.cache_data` to store heavy pivot tables in memory, reducing load times to near-instant for subsequent searches.
+*   **Efficient String Logic:** Replaced real-time string splitting with pre-calculated Genre Sets to minimize CPU overhead.
 
-### 3. Full Deployment
-The model is moved out of a Jupyter Notebook and into a multi-threaded web app using **Streamlit**, allowing any user to interact with the engine in real-time.
+### 3. "Indestructible" Search Box
+Integrated `thefuzz` with a `token_sort_ratio` scorer. This allows the system to remain robust against:
+*   **Typos:** ("marix" ➔ "The Matrix")
+*   **Word Order:** ("Batman The" ➔ "The Batman")
+*   **Incomplete Titles:** ("man of steel" ➔ "Man of Steel (2013)")
 
 ## ⚙️ Tech Stack
-*   **Backend:** Python, Pandas, NumPy
-*   **Matching:** TheFuzz (Levenshtein Distance)
-*   **UI/Frontend:** Streamlit
-*   **Performance:** `python-Levenshtein` for high-speed string calculations.
-
-## 📂 Project Structure
-*   `app.py`: The main Streamlit application script.
-*   `requirements.txt`: List of dependencies for cloud deployment.
-*   `movies.csv` / `ratings.csv`: The core data files.
+*   **Analysis:** Pandas, NumPy, Scikit-Learn
+*   **UI:** Streamlit (Web Framework)
+*   **Matching:** TheFuzz (Levenshtein distance logic)
+*   **Deployment:** Streamlit Cloud / GitHub
 
 ## 💻 How to Run Locally
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/JusChillin96/Movie-Recommendation-System.git
+1. Clone the repo: `git clone https://github.com/[YOUR-USERNAME]/movie-recommender.git`
+2. Install dependencies: `pip install -r requirements.txt`
+3. Launch: `streamlit run app.py`
+
+## 📬 Contact
+Created by **[Waleed Matar]**  
+[[LinkedIn](https://www.linkedin.com/in/waleed-matar-392784371/)]
