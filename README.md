@@ -11,7 +11,7 @@
 Purely "social" recommendation systems often suffer from statistical noise—recommending random movies just because one user watched both. This project implements a **Hybrid Engine** that balances user-rating correlations with genre similarity to ensure results are both mathematically sound and contextually relevant.
 
 ## 🚀 Live Demo
-**[[INSERT YOUR STREAMLIT CLOUD URL HERE](https://recommend-me-some-movies.streamlit.app/)]**
+**[[Check out the website here](https://recommend-me-some-movies.streamlit.app/)]**
 
 ## 🛠️ Engineering Highlights
 
