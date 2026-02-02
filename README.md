@@ -13,7 +13,7 @@ Most recommendation systems fail when a user makes a typo or gets the title slig
 Users can type in a movie (even with typos like "the marix") and receive 10 highly correlated recommendations based on the behavior of over 600 real users.
 
 ## 🚀 Live Demo
-**[INSERT YOUR STREAMLIT CLOUD URL HERE]**
+**[[INSERT YOUR STREAMLIT CLOUD URL HERE](https://recommend-me-some-movies.streamlit.app/)]**
 
 ## 📂 Dataset
 The project uses the **MovieLens Small Dataset** (100k ratings, 9k movies).[[1](https://www.google.com/url?sa=E&q=https%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQGtpmzcwrVYQq3-VCXtI0bsco0Z_RjTupdbinn8S6xWe8EuIDhyHs3aaEO_eeYWrUiNEMMosLsHtf7MPYEw4iaRHRRYxNBsAD4uZeONrY7u4gHhJTOM1sNEtCnTcyI26kEGbYLb2w%3D%3D)]
@@ -47,4 +47,4 @@ The model is moved out of a Jupyter Notebook and into a multi-threaded web app u
 ## 💻 How to Run Locally
 1. Clone the repository:
    ```bash
-   git clone https://github.com/[YOUR-USERNAME]/movie-recommender.git
+   git clone https://github.com/JusChillin96/Movie-Recommendation-System.git
